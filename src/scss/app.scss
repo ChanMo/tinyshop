@@ -236,6 +236,7 @@ a:hover {
     &__right {
       margin-top: $header-height;
       margin-left: $nav-width;
+      padding-bottom: 3.5rem;
       background: white;
       .section {
         margin-top: -$header-height;

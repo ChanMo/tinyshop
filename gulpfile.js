@@ -27,7 +27,7 @@ gulp.task('sass', function(){
 
 /** js **/
 gulp.task('js', function(){
-    return gulp.src('src/js/*.js')
+    return gulp.src('src/js/*.+(js|json)')
         .pipe(gulp.dest('docs/js'))
         .pipe(browserSync.reload({stream:true}));
 });
