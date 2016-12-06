@@ -1,0 +1,23 @@
+<!doctype html>
+<html class="no-js" lang="zh-hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiny Shop</title>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- build:css css/app.min.css -->
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- endbuild -->
+  </head>
+  <body>
+    {% block main %}{% endblock %}
+    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+    <!-- build:js js/app.min.js -->
+    <script src="js/_modal.js"></script>
+    <script src="js/_slide.js"></script>
+    <!-- endbuild -->
+    {% block js %}{% endblock %}
+  </body>
+</html>

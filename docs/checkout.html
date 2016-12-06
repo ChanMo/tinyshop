@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="no-js" lang="zh-hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiny Shop</title>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.min.css">
+  </head>
+  <body>
+    
+<div class="top-bar text-center">
+  <a class="float-left" href="javascript:window.history.back();"><i class="fa fa-angle-left fa-lg"></i></a>
+  <span>确认订单</span>
+</div>
+<div class="checkout">
+  <h6>商品信息<small>共<span>12</span>件商品</small></h6>
+  <ul class="checkout__commodity">
+    
+    <li>
+      <a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/17/f4/c4/17f4c487a2aa7abab6988e30e1a46db7.jpg);">
+        <div>
+        <p>商品名/只显示一行</p>
+        <p><span>规格</span></p>
+        <p><span class="price">120</span><span>x2</span></p>
+        </div>
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/17/f4/c4/17f4c487a2aa7abab6988e30e1a46db7.jpg);">
+        <div>
+        <p>商品名/只显示一行</p>
+        <p><span>规格</span></p>
+        <p><span class="price">120</span><span>x2</span></p>
+        </div>
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/17/f4/c4/17f4c487a2aa7abab6988e30e1a46db7.jpg);">
+        <div>
+        <p>商品名/只显示一行</p>
+        <p><span>规格</span></p>
+        <p><span class="price">120</span><span>x2</span></p>
+        </div>
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/17/f4/c4/17f4c487a2aa7abab6988e30e1a46db7.jpg);">
+        <div>
+        <p>商品名/只显示一行</p>
+        <p><span>规格</span></p>
+        <p><span class="price">120</span><span>x2</span></p>
+        </div>
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/17/f4/c4/17f4c487a2aa7abab6988e30e1a46db7.jpg);">
+        <div>
+        <p>商品名/只显示一行</p>
+        <p><span>规格</span></p>
+        <p><span class="price">120</span><span>x2</span></p>
+        </div>
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/17/f4/c4/17f4c487a2aa7abab6988e30e1a46db7.jpg);">
+        <div>
+        <p>商品名/只显示一行</p>
+        <p><span>规格</span></p>
+        <p><span class="price">120</span><span>x2</span></p>
+        </div>
+      </a>
+    </li>
+    
+  </ul>
+  <h6>收货人信息</h6>
+  <form method="get" action="success.html">
+    <table>
+      <tr>
+        <td><label for="form-name">姓名</label></td>
+        <td><input id="form-name" type="text" name="name" placeholder="请输入姓名"></td>
+      </tr>
+      <tr>
+        <td><label for="form-mobile">联系电话</label></td>
+        <td><input id="form-mobile" type="tel" name="mobile" placeholder="请输入联系电话"></td>
+      </tr>
+      <tr>
+        <td><label for="form-address">收货地址</label></td>
+        <td><input id="zone-picker-input" type="text" name="zone" placeholder="请选择地区" data-zone-picker-toggle readonly></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><textarea placeholder="请输入详细地址"></textarea></td>
+      </tr>
+      <tr>
+        <td><label id="form-remark">备注</label></td>
+        <td><textarea id="form-remark" placeholder="请输入备注信息"></textarea></td>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <ul class="checkout__info">
+            <li>商品总数：<span>12</span></li>
+            <li>商品总价：<span>1200</span></li>
+            <li>运费：<span>20</span></li>
+            <li>合计：<span class="price">1220</span></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2><input type="submit" value="确认订单" class="button button_full"></td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<!-- zone selector -->
+<div class="zone-picker_bg" data-zone-picker-toggle></div>
+<div class="zone-picker">
+  <div class="zone-picker__header text-center">
+    <span>地址选择</span>
+    <i class="fa fa-remove float-right" data-zone-picker-toggle></i>
+  </div>
+  <div class="zone-picker__nav">
+    <ul class="menu">
+      <li class="active"><a href="#">请选择</a></li>
+    </ul>
+  </div>
+  <div class="zone-picker__main">
+    <ul></ul>
+  </div>
+</div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+    <script src="js/app.min.js"></script>
+    
+<script>
+$(function(){
+    zone_data = [];
+    $.ajax({
+      url: 'js/zone.json',
+      data: 'json',
+      success: function(data){
+        //console.log(data);
+        zone_data = data;
+        var province = '';
+        for(var i=1;i<data.length;i++){
+          province += '<li><a href="#">'+data[i].name+'</a></li>';
+        }
+        $(".zone-picker__main ul:eq(0)").html(province);
+        $(".zone-picker__main ul:eq(0)").data("zone_data", data);
+        //console.log(typeof(data));
+        //console.log(eval(data));
+      }
+    });
+
+});
+$(".zone-picker__main").on("click", "a", function(e){
+  e.preventDefault();
+  var type = $(this).parents("ul").index();
+
+  var li = $(this).parent("li");
+  var ul = $(this).parents("ul");
+  var ul_index = ul.index();
+  var nav = $(".zone-picker__nav").find("li").eq(ul_index);
+  var data = ul.data("zone_data");
+
+  /** change li active **/
+  li.addClass("active");
+  li.siblings("li").removeClass("active");
+
+  var current = $(this).parent("li").index();
+  child_data = data[current+1]['sub'];
+
+  if(!child_data){
+    var value = '';
+    var parents = nav.prevAll();
+    parents.each(function(){
+      //value += $(this).find("a").html();
+      value = $(this).find("a").html() + value;
+    });
+    value += $(this).html();
+
+    $("#zone-picker-input").val(value);
+    $(".zone-picker").removeClass("zone-picker_active");
+    $(".zone-picker_bg").hide();
+    return true;
+  }
+  //zone_data = child_data;
+
+  /** change next ul **/
+  ul.hide();
+  ul.after("<ul data-zone_data='"+JSON.stringify(child_data)+"'></ul>");
+
+  /** change nav ul **/
+  var ul_index = $(this).parents("ul").index();
+  nav.removeClass("active");
+  nav.find("a").html($(this).html());
+  nav.after("<li class='active'><a href='#'>请选择</a></li>");
+
+  var child = '';
+  for(var i=1;i<child_data.length;i++){
+    child += '<li><a href="#">'+child_data[i]['name']+'</a></li>';
+  }
+  ul.next("ul").html(child);
+
+});
+
+$(".zone-picker__nav").on("click", "a", function(e){
+  e.preventDefault();
+  /** nav **/
+  var current = $(this).parent("li").index();
+  $(this).parent("li").addClass("active");
+  $(this).parent("li").nextAll().remove();
+  $(this).parent("li").siblings().removeClass("active");
+
+  /** ul **/
+  var current_ul = $(".zone-picker__main").find("ul").eq(current);
+  current_ul.show();
+  current_ul.nextAll().remove();
+  current_ul.siblings().hide();
+});
+
+$("[data-zone-picker-toggle]").bind("click", function(e){
+  e.preventDefault();
+  $(".zone-picker_bg").toggle();
+  $(".zone-picker").toggleClass("zone-picker_active");
+});
+</script>
+
+  </body>
+</html>

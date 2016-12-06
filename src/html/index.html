@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="container tree-list">
+  <div class="tree-list__header" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/bb/0a/33/bb0a33e2e754b4dee253ce7e215d859e.jpg);">
+  </div>
+  <div class="tree-list__main">
+    <div class="tree-list__main__left">
+      <ul id="nav">
+        {% for i in range(1,5) %}
+        <li>
+          <a href="#section{{ i }}">
+            商品类名
+            <i class="badge"></i>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="tree-list__main__right">
+      {% for i in range(1,5) %}
+      <div class="section" id="section{{i}}" data-count="0">
+      <table>
+        <caption>商品类名</caption>
+        {% for j in range(0,3) %}
+        <tr data-price="{{ i*3 }}">
+          <td>
+            <img src="https://s-media-cache-ak0.pinimg.com/564x/c4/49/7a/c4497a5e93609e7e013c214259d68aca.jpg" data-modal-toggle>
+          </td>
+          <td>
+            <p data-modal-toggle>商品名可换行</p>
+            <p data-modal-toggle><span>规格</span></p>
+            <p>
+              <div class="count-selector float-right">
+              <a href="#" data-action="decrease" class="count-selector__action count-selector__decrease">-</a>
+              <i class="count-selector__count">0</i>
+              <a href="#" data-action="increase" class="count-selector__action count-selector__increase">+</a>
+              </div>
+              <span class="price">120</span>
+            </p>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="action-bar tree-list__action-bar">
+  <table>
+    <tr>
+      <td>
+        <div>
+          <i class="fa fa-shopping-cart fa-lg"></i>
+          <i class="badge" id="count-all">0</i>
+        </div>
+      </td>
+      <td>
+        <p><span class="price" id="price-all">0</span></p>
+        <p><span>微信支付立省20元</span></p>
+      </td>
+      <td><a href="checkout.html">去结算</a></td>
+    </tr>
+  </table>
+</div>
+
+<div class="modal-bg" data-modal-toggle></div>
+<div class="modal commodity-modal">
+  <div class="commodity-modal__cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/b2/a2/2d/b2a22d4ca1b8fdf987bc53dfdddb1636.jpg);">
+    <div>
+    <p>商品简介，100字以内</p>
+    </div>
+  </div>
+  <div class="commodity-modal__info">
+    <h6>商品名称</h6>
+    <p>商品规格等信息</p>
+  </div>
+</div>
+
+{% endblock %}
+{% block js %}
+<script>
+$(function(){
+  $("#nav").onePageNav({
+    currentClass: "active"
+  });
+
+  /** count selector **/
+  $(".count-selector__action").on("click", function(e){
+    e.preventDefault();
+    var count_ele = $(this).siblings(".count-selector__count"); // count
+    var action = $(this).data("action");
+    var count = count_ele.html();
+    var count_change = 0;
+    var price = parseFloat($(this).parents("tr").data("price"));
+    if(action == 'decrease' && count > 0){
+      count_ele.html(--count);
+      count_change = -1;
+    }else if(action == 'increase'){
+      count_ele.html(++count);
+      count_change = 1;
+    }
+
+    /** section count change **/
+    var section = $(this).parents(".section"); // section
+    var section_id = section.attr("id");
+    var section_count = section.data("count") + count_change;
+    section.data("count", section_count);
+    var section_link = $("[href='#"+section_id+"']");
+    if(section_count > 0){
+      section_link.find("i").show();
+      section_link.find("i").html(section_count);
+    }else{
+      section_link.find("i").hide();
+    }
+
+    /** count all **/
+    var count_all_ele = $("#count-all");
+    var count_all = parseInt(count_all_ele.html());
+    count_all += count_change;
+    console.log(count_all);
+    if(count_all > 0){
+      count_all_ele.show();
+      count_all_ele.html(count_all);
+    }else{
+      count_all_ele.hide();
+    }
+
+    /** price all **/
+    var price_all_ele = $("#price-all");
+    var price_all = parseFloat(price_all_ele.html());
+    price_all += price * count_change;
+    price_all_ele.html(price_all);
+  });
+});
+</script>
+{% endblock %}
