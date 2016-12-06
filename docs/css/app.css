@@ -1885,7 +1885,7 @@ a:hover {
       padding: 0.2rem 1rem; }
 
 .order {
-  height: 100vh;
+  height: calc(100vh - 3rem);
   background: #f5f5f5; }
   .order__header {
     margin: 0 0 .5rem 0; }
