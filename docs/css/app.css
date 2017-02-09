@@ -1770,6 +1770,11 @@ a:hover {
     color: #333; }
     .checkout table tr td:first-child {
       vertical-align: middle; }
+    .checkout table tr td input, .checkout table tr td textarea {
+      margin: 0;
+      border-color: #ccc;
+      -webkit-user-select: none;
+      user-select: none; }
   .checkout__info {
     margin: 0;
     padding: 0.5rem 0;

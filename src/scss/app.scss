@@ -416,12 +416,12 @@ a:hover {
         &:first-child {
           vertical-align: middle;
         }
-        //input,textarea {
-        //  margin: 0;
-        //  border-color: #ccc;
-        //  -webkit-user-select: none;
-        //  user-select: none;
-        //}
+        input,textarea {
+          margin: 0;
+          border-color: #ccc;
+          -webkit-user-select: none;
+          user-select: none;
+        }
       }
     }
   }
