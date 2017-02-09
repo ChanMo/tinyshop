@@ -42,6 +42,8 @@ textarea {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-appearance: none; /** safari **/
+    //-webkit-select: none;
+    //text-select: none;
     &:focus {
         outline: 0;
         border-color: $primary-color;
