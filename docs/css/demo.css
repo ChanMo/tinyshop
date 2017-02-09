@@ -497,44 +497,72 @@ textarea {
 input[type="search"] {
   -webkit-appearance: none; }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-select:focus,
-textarea:focus {
-  outline: 0;
-  border-color: #1582e7; }
-
-input[type="text"][disabled],
-input[type="password"][disabled],
-input[type="email"][disabled],
-input[type="url"][disabled],
-input[type="date"][disabled],
-input[type="month"][disabled],
-input[type="time"][disabled],
-input[type="datetime"][disabled],
-input[type="datetime-local"][disabled],
-input[type="week"][disabled],
-input[type="number"][disabled],
-input[type="search"][disabled],
-input[type="tel"][disabled],
-input[type="color"][disabled],
-select[disabled],
-textarea[disabled] {
-  cursor: not-allowed;
-  background-color: #eaeded;
-  color: #cad2d3; }
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  margin: 0 0 1rem 0;
+  padding: 0 0.5rem;
+  line-height: auto;
+  border: 1px solid #9e9e9e;
+  border-radius: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  /** safari **/ }
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="week"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus,
+  select:focus,
+  textarea:focus {
+    outline: 0;
+    border-color: #1582e7; }
+  input[type="text"][disabled],
+  input[type="password"][disabled],
+  input[type="email"][disabled],
+  input[type="url"][disabled],
+  input[type="date"][disabled],
+  input[type="month"][disabled],
+  input[type="time"][disabled],
+  input[type="datetime"][disabled],
+  input[type="datetime-local"][disabled],
+  input[type="week"][disabled],
+  input[type="number"][disabled],
+  input[type="search"][disabled],
+  input[type="tel"][disabled],
+  input[type="color"][disabled],
+  select[disabled],
+  textarea[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3; }
 
 textarea {
   height: auto;

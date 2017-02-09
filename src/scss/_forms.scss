@@ -28,22 +28,22 @@ input[type="tel"],
 input[type="color"],
 select,
 textarea {
-//    display: block;
-//    width: 100%;
-//    //max-width: 100%;
-//    height: $form-input-height;
-//    margin: $form-input-margin;
-//    padding: $form-input-padding;
-//    //line-height: $form-input-height;
-//    line-height: auto;
-//    border: $form-input-border;
-//    border-radius: $form-input-radius;
-//    -webkit-box-sizing: border-box;
-//    -moz-box-sizing: border-box;
-//    box-sizing: border-box;
-//    -webkit-appearance: none; /** safari **/
-//    //-webkit-select: none;
-//    //text-select: none;
+    display: block;
+    width: 100%;
+    //max-width: 100%;
+    height: $form-input-height;
+    margin: $form-input-margin;
+    padding: $form-input-padding;
+    //line-height: $form-input-height;
+    line-height: auto;
+    border: $form-input-border;
+    border-radius: $form-input-radius;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none; /** safari **/
+    //-webkit-select: none;
+    //text-select: none;
     &:focus {
         outline: 0;
         border-color: $primary-color;
