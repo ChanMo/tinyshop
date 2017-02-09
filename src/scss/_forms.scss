@@ -61,17 +61,17 @@ textarea {
     padding: .5rem;
 }
 
-//input, select, textarea {
-//    &[readonly] {
-//        background-color: #eee;
-//        color: #777;
-//        border-color: #ccc;
-//    }
-//    &:focus:invalid {
-//        color: #b94a48;
-//        border-color: #e9322d;
-//    }
-//}
+input, select, textarea {
+    &[readonly] {
+        background-color: #eee;
+        color: #777;
+        border-color: #ccc;
+    }
+    &:focus:invalid {
+        color: #b94a48;
+        border-color: #e9322d;
+    }
+}
 
 label {
 }

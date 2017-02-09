@@ -502,6 +502,15 @@ textarea {
   min-height: 2.5rem;
   padding: .5rem; }
 
+input[readonly], select[readonly], textarea[readonly] {
+  background-color: #eee;
+  color: #777;
+  border-color: #ccc; }
+
+input:focus:invalid, select:focus:invalid, textarea:focus:invalid {
+  color: #b94a48;
+  border-color: #e9322d; }
+
 /**
  * grid
  */
