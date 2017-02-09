@@ -6,13 +6,13 @@
 
 /** import  all valiable **/
 @import 'settings';
-@import 'normalize';
+//@import 'normalize';
 
 // Core variables and mixins
 @import 'util/util';
 @import 'typography';
 @import 'tables';
-@import 'forms';
+//@import 'forms';
 @import 'grid';
 @import 'buttons';
 @import 'helper';
@@ -414,12 +414,12 @@ a:hover {
         &:first-child {
           vertical-align: middle;
         }
-        input,textarea {
-          margin: 0;
-          border-color: #ccc;
-          -webkit-user-select: none;
-          user-select: none;
-        }
+        //input,textarea {
+        //  margin: 0;
+        //  border-color: #ccc;
+        //  -webkit-user-select: none;
+        //  user-select: none;
+        //}
       }
     }
   }
