@@ -40,6 +40,7 @@ a:hover {
     //z-index: -1;
 }
 .zone-picker {
+  visibility: hidden;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -95,6 +96,7 @@ a:hover {
     }
 }
 .zone-picker_active {
+  visibility: visible;
     transform: translateY(0);
     opacity: 1;
 }
