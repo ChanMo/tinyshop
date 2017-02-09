@@ -485,6 +485,23 @@ table {
 /*         background-color: $table-background-hover; */
 /*     } */
 /* } */
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox; }
+
+textarea {
+  resize: vertical; }
+
+input[type="search"] {
+  -webkit-appearance: none; }
+
+textarea {
+  height: auto;
+  min-height: 2.5rem;
+  padding: .5rem; }
+
 /**
  * grid
  */
