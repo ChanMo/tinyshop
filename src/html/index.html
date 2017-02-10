@@ -1,8 +1,30 @@
 {% extends "base.html" %}
 {% block main %}
 <div class="container tree-list">
-  <div class="tree-list__header" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/bb/0a/33/bb0a33e2e754b4dee253ce7e215d859e.jpg);">
+  <!-- header -->
+  <div class="tree-list__header">
+    <div class="slide" style="height:22vh;" data-auto="true" data-time="3000">
+      <ul class="slide__main">
+        <li><a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/72/d7/89/72d789a4204b4e7be415545ec132b2a6.jpg);"></a></li>
+        <li><a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/3f/26/7a/3f267ad8592fa81ae696100a4f801fc8.jpg);"></a></li>
+        <li><a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/f4/35/bc/f435bc4e577b5fc27f888fee72fb035d.jpg);"></a></li>
+        <li><a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/a0/69/60/a06960f77255cc9dbce3ca0c55f03479.jpg);"></a></li>
+      </ul>
+      <a href="#" class="slide__action slide__action_left hide">
+        <i class="fa fa-angle-left"></i>
+      </a>
+      <a href="#" class="slide__action slide__action_right hide">
+        <i class="fa fa-angle-right"></i>
+      </a>
+      <ul class="slide__nav">
+        {% for i in range(0,4) %}
+        <li {% if i == 0 %}class="active"{% endif %}><a href="#"></a></li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
+
+  <!-- main -->
   <div class="tree-list__main">
     <div class="tree-list__main__left">
       <ul id="nav">
@@ -46,11 +68,37 @@
     </div>
   </div>
 </div>
+
+<!-- bottom action modal -->
+<div class="cart-modal-bg" data-cart-modal-toggle></div>
+<div class="cart-modal">
+  <div class="cart-modal__header"><div>购物车</div></div>
+  <div class="cart-modal__container">
+  <table>
+    {% for i in range(0,6) %}
+    <tr>
+      <td>商品商品商品商品商品商品商品商品商品名名名名名名名名名</td>
+      <td>20</td>
+      <td>
+        <div class="count-selector">
+          <a href="#" data-action="decrease" class="count-selector__action count-selector__decrease">-</a>
+          <i class="count-selector__count">0</i>
+          <a href="#" data-action="increase" class="count-selector__action count-selector__increase">+</a>
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div>
+  <div class="cart-modal__footer"></div>
+</div>
+
+<!-- bottom action bar -->
 <div class="action-bar tree-list__action-bar">
   <table>
     <tr>
       <td>
-        <div>
+        <div data-cart-modal-toggle>
           <i class="fa fa-shopping-cart fa-lg"></i>
           <i class="badge" id="count-all">0</i>
         </div>
@@ -64,6 +112,9 @@
   </table>
 </div>
 
+
+
+<!-- commodity modal -->
 <div class="modal-bg" data-modal-toggle></div>
 <div class="modal commodity-modal">
   <div class="commodity-modal__cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/b2/a2/2d/b2a22d4ca1b8fdf987bc53dfdddb1636.jpg);">
@@ -79,10 +130,21 @@
 
 {% endblock %}
 {% block js %}
+<script src="js/_slide.js"></script>
 <script>
 $(function(){
+  
+  $(".slide").slide();
+
   $("#nav").onePageNav({
     currentClass: "active"
+  });
+
+  /** shopping cart click event **/
+  $("[data-cart-modal-toggle]").bind("click", function(e){
+    e.preventDefault();
+    $(".cart-modal-bg").toggle();
+    $(".cart-modal").toggleClass("cart-modal_active");
   });
 
   count_selector_enable = true;
