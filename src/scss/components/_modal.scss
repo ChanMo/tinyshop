@@ -21,6 +21,7 @@
     color: black;
     opacity: 0;
     //transform: translate(-50%, 1000%);
+    -webkit-transform: translate3d(-50%, 100%, 0);
     transform: translate3d(-50%, 100%, 0);
     visibility: hidden; //use visibility instead of display:none;
     //display: none;
@@ -48,5 +49,6 @@
 .modal-active {
   visibility: visible;
     opacity: 1;
+    -webkit-transform: translate3d(-50%,50%,0);
     transform: translate3d(-50%,50%,0);
 }
