@@ -1979,7 +1979,8 @@ a:hover {
       font-size: 0.85rem;
       font-weight: 600; }
   .cart-modal__container {
-    height: 17.5rem;
+    min-height: 3.5rem;
+    max-height: 17.5rem;
     overflow-y: scroll;
     padding: 0 1rem;
     box-sizing: border-box; }
