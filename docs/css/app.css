@@ -2013,3 +2013,112 @@ a:hover {
   visibility: visible;
   transform: translateY(0);
   opacity: 1; }
+
+.login {
+  height: 100vh;
+  background-color: #1e6cf8;
+  background-image: url(../image/background.png);
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat; }
+  .login__logo {
+    padding: 30vh 0 2rem;
+    text-align: center; }
+    .login__logo img {
+      width: 40%; }
+  .login__form {
+    padding: 2vh 8vw 0; }
+    .login__form input:not([type='submit']) {
+      height: 3rem;
+      border: none;
+      border-radius: 1.5rem;
+      margin: 0 0 1.5rem;
+      padding-left: 4rem;
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+      background-repeat: no-repeat;
+      background-size: 1.8rem auto;
+      background-position: 1.2rem center;
+      font-size: 1.5rem; }
+    .login__form input[type='submit'] {
+      height: 3rem;
+      border: none;
+      border-radius: 1.5rem;
+      margin: 1rem 0 .5rem;
+      width: 100%;
+      background: white;
+      color: #26a1fe;
+      font-size: 1.3rem; }
+    .login__form #username {
+      background-image: url(../image/username.png); }
+    .login__form #password {
+      background-image: url(../image/password.png); }
+    .login__form p {
+      text-align: center; }
+      .login__form p a {
+        color: white; }
+
+.register__form {
+  padding: 1rem; }
+  .register__form label {
+    display: block;
+    margin: 0 0 .5rem; }
+
+.auth__form {
+  padding: 1rem; }
+
+.auth table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+  .auth table tr td {
+    border: none;
+    padding: .5rem .5rem; }
+    .auth table tr td:first-child {
+      white-space: nowrap;
+      width: 1%;
+      vertical-align: middle;
+      font-size: 0.85rem; }
+    .auth table tr td input {
+      border-color: rgba(0, 0, 0, 0.12);
+      margin: 0; }
+
+.auth h6 {
+  color: red;
+  margin-bottom: 0.25rem; }
+
+.auth p {
+  font-size: 0.8rem;
+  margin-bottom: 1rem; }
+
+.auth-image__form {
+  padding: 1rem; }
+  .auth-image__form .example-img {
+    position: relative;
+    padding: 1rem 1rem 0;
+    text-align: center; }
+    .auth-image__form .example-img:after {
+      content: '';
+      display: block;
+      width: 15vw;
+      height: 15vw;
+      background-image: url(../image/stamp.png);
+      background-size: cover;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      transform: translate(-50%, -50%); }
+    .auth-image__form .example-img img {
+      width: 70%; }
+  .auth-image__form label {
+    display: block;
+    margin-bottom: 1.5rem; }
+    .auth-image__form label > div {
+      padding: 1rem 1rem 0;
+      text-align: center; }
+      .auth-image__form label > div img {
+        width: 70%; }
+  .auth-image__form h6 {
+    color: red;
+    margin-bottom: .25rem; }
+  .auth-image__form p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem; }

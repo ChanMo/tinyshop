@@ -754,3 +754,147 @@ a:hover {
   transform: translateY(0);
   opacity: 1;
 }
+
+.login {
+  height: 100vh;
+  background-color: #1e6cf8;
+  background-image: url(../image/background.png);
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  &__logo {
+    padding: 30vh 0 2rem;
+    text-align: center;
+    img {
+      width: 40%;
+    }
+  }
+  &__form {
+    padding: 2vh 8vw 0;
+    $height: 3rem;
+    @mixin border-radius {
+      height: $height;
+      border: none;
+      border-radius: $height/2;
+    }
+    input:not([type='submit']) {
+      @include border-radius;
+      margin: 0 0 1.5rem;
+      padding-left: 4rem;
+      background: rgba(white, 0.25);
+      color: white;
+      background-repeat: no-repeat;
+      background-size: 1.8rem auto;
+      background-position: 1.2rem center;
+      font-size: 1.5rem;
+    }
+    input[type='submit'] {
+      @include border-radius;
+      margin: 1rem 0 .5rem;
+      width: 100%;
+      background: white;
+      color: #26a1fe;
+      font-size: 1.3rem;
+    }
+    #username {
+      background-image: url(../image/username.png);
+    }
+    #password {
+      background-image: url(../image/password.png);
+    }
+    p {
+      text-align: center;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.register {
+  &__form {
+    padding: 1rem;
+    label {
+      display: block;
+      margin: 0 0 .5rem;
+    }
+  }
+}
+
+.auth {
+  &__form {
+    padding: 1rem;
+  }
+  table {
+    tr {
+      border-bottom: 1px solid rgba(black, 0.06);
+      td {
+        border: none;
+        padding: .5rem .5rem;
+        &:first-child {
+          white-space: nowrap;
+          width: 1%;
+          vertical-align: middle;
+          font-size: 0.85rem;
+        }
+        input {
+          border-color: rgba(black, 0.12);
+          margin: 0;
+        }
+      }
+    }
+  }
+  h6 {
+    color: red;
+    margin-bottom: 0.25rem;
+  }
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.auth-image {
+  &__form {
+    padding: 1rem;
+    .example-img {
+      position: relative;
+      padding: 1rem 1rem 0;
+      text-align: center;
+      &:after {
+        content: '';
+        display: block;
+        width: 15vw;
+        height: 15vw;
+        background-image: url(../image/stamp.png);
+        background-size: cover;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        transform: translate(-50%, -50%);
+      }
+      img {
+        width: 70%;
+      }
+    }
+    label {
+      display: block;
+      margin-bottom: 1.5rem;
+      & > div {
+        padding: 1rem 1rem 0;
+        text-align: center;
+        img {
+          width: 70%;
+        }
+      }
+    }
+    h6 {
+      color: red;
+      margin-bottom: .25rem;
+    }
+    p {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

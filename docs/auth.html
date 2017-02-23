@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js" lang="zh-hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiny Shop</title>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.min.css">
+  </head>
+  <body>
+    
+<div class="top-bar text-center">
+  <a href="javascript:window.history.back();" class="float-left"><i class="fa fa-angle-left"></i></a>
+  <span>注册</span>
+</div>
+<div class="auth">
+  <form class="auth__form" method="GET" action="auth_image.html">
+    <table>
+      <tr>
+        <td><label>帐号</label></td>
+        <td>15550008888</td>
+      </tr>
+      <tr>
+        <td><label>门店名称</label></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td><label>所在地区</label></td>
+        <td><input type="text" id="zone-picker-input" data-zone-picker-toggle readonly></td>
+      </tr>
+      <tr>
+        <td><label>收货地址</label></td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td><label>营业面积</label></td>
+        <td><select><option>-</option></select></td>
+      </tr>
+      <tr>
+        <td style="vertical-align:top;padding-top:1rem;"><label>经营类型</label></td>
+        <td>
+          <div class="wrap">
+          
+          <div class="small-6" style="padding-bottom:0;">
+          <input type="radio" id="item1"><label for="item1">专业美容店</label>
+          </div>
+          
+          <div class="small-6" style="padding-bottom:0;">
+          <input type="radio" id="item2"><label for="item2">快修快保店</label>
+          </div>
+          
+          <div class="small-6" style="padding-bottom:0;">
+          <input type="radio" id="item3"><label for="item3">汽车修理厂</label>
+          </div>
+          
+          <div class="small-6" style="padding-bottom:0;">
+          <input type="radio" id="item4"><label for="item4">专业改装店</label>
+          </div>
+          
+          <div class="small-6" style="padding-bottom:0;">
+          <input type="radio" id="item5"><label for="item5">4S店</label>
+          </div>
+          
+          <div class="small-6" style="padding-bottom:0;">
+          <input type="radio" id="item6"><label for="item6">批发商</label>
+          </div>
+          
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><label>店铺数量</label></td>
+        <td><input type="number"></td>
+      </tr>
+    </table>
+    <h6>温馨提示：</h6>
+    <p>在通过认证之前，您暂时无法购买</p>
+    <input type="submit" class="button button_full" value="下一步">
+  </form>
+</div>
+
+<!-- zone selector -->
+<div class="zone-picker_bg" data-zone-picker-toggle></div>
+<div class="zone-picker">
+  <div class="zone-picker__header text-center">
+    <span>地址选择</span>
+    <i class="fa fa-remove float-right" data-zone-picker-toggle></i>
+  </div>
+  <div class="zone-picker__nav">
+    <ul class="menu">
+      <li class="active"><a href="#">请选择</a></li>
+    </ul>
+  </div>
+  <div class="zone-picker__main">
+    <ul></ul>
+  </div>
+</div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+    <script src="js/app.min.js"></script>
+    
+<script>
+$(function(){
+    zone_data = [];
+    $.ajax({
+      url: 'js/zone.json',
+      data: 'json',
+      success: function(data){
+        //console.log(data);
+        zone_data = data;
+        var province = '';
+        for(var i=1;i<data.length;i++){
+          province += '<li><a href="#">'+data[i].name+'</a></li>';
+        }
+        $(".zone-picker__main ul:eq(0)").html(province);
+        $(".zone-picker__main ul:eq(0)").data("zone_data", data);
+        //console.log(typeof(data));
+        //console.log(eval(data));
+      }
+    });
+
+});
+$(".zone-picker__main").on("click", "a", function(e){
+  e.preventDefault();
+  var type = $(this).parents("ul").index();
+
+  var li = $(this).parent("li");
+  var ul = $(this).parents("ul");
+  var ul_index = ul.index();
+  var nav = $(".zone-picker__nav").find("li").eq(ul_index);
+  var data = ul.data("zone_data");
+
+  /** change li active **/
+  li.addClass("active");
+  li.siblings("li").removeClass("active");
+
+  var current = $(this).parent("li").index();
+  child_data = data[current+1]['sub'];
+
+  if(!child_data){
+    var value = '';
+    var parents = nav.prevAll();
+    parents.each(function(){
+      //value += $(this).find("a").html();
+      value = $(this).find("a").html() + value;
+    });
+    value += $(this).html();
+
+    $("#zone-picker-input").val(value);
+    $(".zone-picker").removeClass("zone-picker_active");
+    $(".zone-picker_bg").hide();
+    return true;
+  }
+  //zone_data = child_data;
+
+  /** change next ul **/
+  ul.hide();
+  ul.after("<ul data-zone_data='"+JSON.stringify(child_data)+"'></ul>");
+
+  /** change nav ul **/
+  var ul_index = $(this).parents("ul").index();
+  nav.removeClass("active");
+  nav.find("a").html($(this).html());
+  nav.after("<li class='active'><a href='#'>请选择</a></li>");
+
+  var child = '';
+  for(var i=1;i<child_data.length;i++){
+    child += '<li><a href="#">'+child_data[i]['name']+'</a></li>';
+  }
+  ul.next("ul").html(child);
+
+});
+
+$(".zone-picker__nav").on("click", "a", function(e){
+  e.preventDefault();
+  /** nav **/
+  var current = $(this).parent("li").index();
+  $(this).parent("li").addClass("active");
+  $(this).parent("li").nextAll().remove();
+  $(this).parent("li").siblings().removeClass("active");
+
+  /** ul **/
+  var current_ul = $(".zone-picker__main").find("ul").eq(current);
+  current_ul.show();
+  current_ul.nextAll().remove();
+  current_ul.siblings().hide();
+});
+
+$("[data-zone-picker-toggle]").bind("click", function(e){
+  e.preventDefault();
+  $(".zone-picker_bg").toggle();
+  $(".zone-picker").toggleClass("zone-picker_active");
+});
+</script>
+
+  </body>
+</html>

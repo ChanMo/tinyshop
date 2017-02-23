@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar text-center">
+  <a href="javascript:window.history.back();" class="float-left"><i class="fa fa-angle-left"></i></a>
+  <span>注册</span>
+</div>
+<div class="auth-image">
+  <form class="auth-image__form">
+    <span>上传营业执照或个体工商户执照:</span>
+    <div class="example-img">
+      <img src="http://img.jdzj.com/UserDocument/2012Y/syw21ceco/Picture/20134714345.jpg">
+    </div>
+    <label>
+      <input type="file" class="hide">
+      <div>
+        <img src="image/upload.png" class="upload-img">
+      </div>
+    </label>
+
+    <span>上传店铺门面照片:</span>
+    <div class="example-img">
+      <img src="http://pic1.shejiben.com/case/1207/31/20120731_e5dea29ddf6caaafde11bHAKa6zrw6JZ.jpg">
+    </div>
+
+    <label>
+      <input type="file" class="hide">
+      <div>
+        <img src="image/upload.png" class="upload-img">
+      </div>
+    </label>
+    <h6>温馨提示：</h6>
+    <p>上传的图片只支持png、jpg、jpeg等图片类型。</p>
+    <input type="submit" value="确认上传" class="button button_full" data-modal-toggle>
+  </form>
+</div>
+
+<div class="modal-bg" data-modal-toggle></div>
+<div class="modal">
+  <div class="modal__main text-center">
+    <h4>资料提交成功！</h4>
+    <p>恭喜您资料提交成功，我们将尽快为您审核，审核通过后将会赠送您2000积分，请您耐心等待～</p>
+    <a href="#" class="button" data-modal-toggle>随便逛逛</a>
+  </div>
+</div>
+{% endblock %}

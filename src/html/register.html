@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar text-center">
+  <a href="javascript:window.history.back();" class="float-left"><i class="fa fa-angle-left"></i></a>
+  <span>注册</span>
+</div>
+<div class="register">
+  <form class="register__form" method="GET" action="auth.html">
+    <label>手机号码
+      <input type="tel">
+    </label>
+    <label>密码
+      <input type="password">
+    </label>
+    <label>确认密码
+      <input type="password">
+    </label>
+    <input type="submit" class="button button_full">
+  </form>
+</div>
+{% endblock %}
