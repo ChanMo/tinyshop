@@ -34,9 +34,9 @@ gulp.task('js', function(){
 
 /** images **/
 gulp.task('images', function(){
-    return gulp.src('src/img/**/*.+(png|jpg|gif|svg)')
+    return gulp.src('src/image/**/*.+(png|jpg|gif|svg)')
         .pipe(imagemin())
-        .pipe(gulp.dest('docs/img'));
+        .pipe(gulp.dest('docs/image'));
 });
 
 /** fonts **/
